@@ -13,7 +13,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 
 
-class Student(ndb.Model):
+class Thesis(ndb.Model):
     Year = ndb.StringProperty(indexed=True)
     Title = ndb.StringProperty(indexed=True)
     Abstract = ndb.StringProperty(indexed=True)
@@ -29,7 +29,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        student = Student()
+        student = Thesis()
         student.Year = self.request.get('Year')
         student.Title = self.request.get('Title')
         student.Abstract = self.request.get('Abstract')
@@ -41,7 +41,7 @@ class APIStudentHandler(webapp2.RequestHandler):
 
     def get(self):
         #get all student
-        students = Student.query().order(-Student.date).fetch()
+        students = Thesis.query().order(-Thesis.date).fetch()
         student_list = []
 
         for student in students:
@@ -62,7 +62,7 @@ class APIStudentHandler(webapp2.RequestHandler):
         self.response.out.write(json.dumps(response))
 
     def post(self):
-        student = Student()
+        student = Thesis()
         student.Year = self.request.get('Year')
         student.Title = self.request.get('Title')
         student.Abstract = self.request.get('Abstract')

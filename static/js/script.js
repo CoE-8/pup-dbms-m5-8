@@ -17,6 +17,8 @@ $(function(){
 				var full_name = response.data.Year + ' - ' + response.data.Title;
 				$('#student-list').prepend('<li>' + full_name + '</li>')
 				$('input[type=text], [type=number]').val('');
+				$('select[name=Year]').val('Year');
+				$('select[name=Section]').val('Section');
 			} else {
 
 			}
