@@ -1,13 +1,14 @@
 # app.yaml = application config file
-application: coe-dbms-8-module-2
+application: pup-dbms-m3-8
 version: 1
 runtime: python27
 api_version: 1
 threadsafe: true
 
 handlers:
-- url: /design
-  static_dir: design
+- url: /static
+  static_dir: static
+
 - url: /.*
   script: main.app
 

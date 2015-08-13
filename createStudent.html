@@ -1,34 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" media="screen" href="/design/css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/design/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery-1.11.3.js"></script>
 </head>
 
 <nav class="navbar navbar-inverse navbar-static-top" style="height: 125px; margin: 0px;">
     <div class="container">
-    <img src="/design/image/1.png" style="height:100px; margin-top: 18px" class="img-responsive center-block">
+    <img src="/static/image/1.png" style="height:100px; margin-top: 18px" class="img-responsive center-block">
     </div>
 </nav>
 
-<body style="background-attachment:fixed; background-size:cover" background="/design/image/3.jpg">
+<body style="background-attachment:fixed; background-size:cover" background="/static/image/3.jpg">
 <div class="form">
 <p>CREATE STUDENT</p>
-<form action="/student/create" method="post">
-    <div class="section"><span>1</span>Personal Information</div>
-    <div class="inner-wrap">
-        <label>Fisrt Name <input type="text" name="first_name" required></label>
-        <label>Last Name <input type="text" name="last_name" required></label>
-        <label>Age <input type="number" name="age" required></label>
-    </div>
-    <div class="button-section">
-     <button class="btn btn-primary" type="submit">CREATE</button>
-     <a href="/home"><button type="button" class="btn btn-info pull-right">Cancel</button></a>
-    </div>
-</form>
+    <form id="create-form">
+        <div class="section"><span>1</span>Personal Information</div>
+        <div class="inner-wrap">
+            <label>Year</label>
+            <select name="Year">
+              <option >Year</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+            </select>
+            <label>Title <input type="text" name="Title" required></label>
+            <label>Abstract <input type="text" name="Abstract" required></label>
+            <label>Adviser <input type="text" name="Adviser" required></label>
+            <label>Section</label>
+            <select name="Section">
+              <option >Section</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+        </div>
+
+        <button class="btn btn-warning" type="submit">CREATE</button>
+
+    </form>
 </div>
+
+<div class="form">
+    <p>LIST OF STUDENTS</p>
+    <ul id="student-list">
+        
+    </ul>
+</div>
+
 </body>
 
 <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0px;">
+
+    <script type="text/javascript" src="/static/js/script.js"></script>
 
 </html>
