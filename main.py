@@ -25,7 +25,7 @@ class Student(ndb.Model):
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('createStudent.html')
+        template = JINJA_ENVIRONMENT.get_template('thesisForm.html')
         self.response.write(template.render())
 
     def post(self):
