@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap.min.css">
     <script type="text/javascript" src="/static/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
 </head>
 
 <nav class="navbar navbar-inverse navbar-static-top" style="height: 125px; margin: 0px;">
@@ -13,7 +14,7 @@
 </nav>
 
 <body style="background-attachment:fixed; background-size:cover" background="/static/image/3.jpg">
-  
+
 <div class="header2">
 <div class="container">
   <ul class="nav">
@@ -23,8 +24,8 @@
 </div>
 
 <div class="form">
-<p>NEW THESIS ENTRY</p>
-    <form id="create-form">
+<p>EDIT THESIS ENTRY</p>
+    <form id="create-form2" action="/thesis/edit/{{thesis.key.id()}}" method="post">
         <div class="inner-wrap">
             <label>Year
             <select required name="Year">
@@ -34,11 +35,12 @@
               <option value="2013">2013</option>
               <option value="2014">2014</option>
               <option value="2015">2015</option>
+              <option selected value="{{thesis.Year}}">{{thesis.Year}}</option>
             </select>
             </label>
-            <label>Title <input type="text" name="Title" required></label>
-            <label>Abstract <textarea type="text" name="Abstract" required></textarea></label>
-            <label>Adviser <input type="text" name="Adviser" required></label>
+            <label>Title <input type="text" name="Title" value="{{thesis.Title}}" required></label>
+            <label>Abstract <textarea type="text" name="Abstract" required>{{thesis.Abstract}}</textarea></label>
+            <label>Adviser <input type="text" name="Adviser" value="{{thesis.Adviser}}" required></label>
             <label>Section
             <select required name="Section">
               <option selected disabled>Section</option>
@@ -47,26 +49,16 @@
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+              <option selected value="{{thesis.Section}}">{{thesis.Section}}</option>
             </select>
             </label>
         </div>
-
-        <button class="btn btn-warning" type="submit">CREATE</button>
-
+        <button class="btn btn-primary" type="submit">SAVE CHANGES</button>
     </form>
-</div>
-
-<div class="form">
-    <p>LIST OF THESIS</p>
-    <ul id="student-list">
-        
-    </ul>
 </div>
 
 </body>
 
 <nav class="navbar navbar-inverse navbar-static-bottom" style="margin-bottom: 0px;">
-
-    <script type="text/javascript" src="/static/js/script.js"></script>
 
 </html>
