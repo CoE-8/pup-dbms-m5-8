@@ -1,5 +1,5 @@
 # app.yaml = application config file
-application: pup-dbms-m4-8
+application: pup-dbms-m5-8
 version: 1
 runtime: python27
 api_version: 1

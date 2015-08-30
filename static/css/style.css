@@ -1,3 +1,9 @@
+body {
+    background-image: url("/static/image/3.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .form{
     width: 450px;
     padding: 30px;
@@ -22,7 +28,7 @@
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.4);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.4);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.4);
-    border-bottom: 1px solid #FFC125;
+    border-bottom: 1px solid #FFA54F;
     border-top: 1px solid #121212;
     border-left: 1px solid #121212;
     border-right: 1px solid #121212;
@@ -37,7 +43,7 @@
     border-radius: 6px;
     margin-bottom: 20px;
     margin-top: 10px;
-    border: 2px solid #FFC125;
+    border: 2px solid #FFA54F;
 }
 
 .form label{
@@ -130,8 +136,8 @@ span {
     border-right-width: 0px;
     border-bottom-width: 1px;
     border-left-width: 0px;
-    border-bottom: solid 2px #FFC125;
-    box-shadow: 1px 1px 2px rgba(99,184,255,1);
+    border-bottom: solid 2px #FFA54F;
+    
 }
 
 li.welcome {
@@ -162,4 +168,73 @@ li.logout {
     font-family: Impact;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+
+.login {
+    width: 300px;
+    height: 280px;
+    overflow: hidden;
+    background: #1e1e1e;
+    border-radius: 6px;
+    margin: 30px auto;
+    -moz-box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.2);
+    
+}
+
+.login .title {
+    width: 300px;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    font-size: 15px;
+    text-align: center;
+    color: #bfbfbf;
+    font-weight: bold;
+    background: #121212;
+    border: #2d2d2d solid 1px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #FFA54F;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    font-family: Arial;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.4);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.4);
+}
+
+.login form {
+    width: 240px;
+    height: auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login {
+    margin-top: 20px;
+    padding-left: 75px;
+    padding-right: 75px;
+    margin-left: 20px; 
+}
+
+#proceed {
+
+    padding-left: 100px;
+    padding-right: 100px;
+
 }

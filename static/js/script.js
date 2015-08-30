@@ -35,7 +35,7 @@ $(function(){
 		$.get(thesis_list_api, {} , function(response) {
 			console.log('#student-list', response)
 			response.data.forEach(function(thesis){
-				var thesisDetail = '<strong>YEAR: </strong>' + thesis.Year + '<br><strong>TITLE: </strong>'  + thesis.Title + '<br><strong>CREATED BY: </strong>' + thesis.username;;
+				var thesisDetail = '<strong>YEAR: </strong>' + thesis.Year + '<br><strong>TITLE: </strong>'  + thesis.Title + '<br><strong>CREATED BY: </strong>' + thesis.username;
 				$('#student-list').append('<li>' + thesisDetail + '<br><a href=\"/thesis/delete/'+thesis.id+'\"><button id=\"delete\" class=\"btn btn-danger\" type=\"submit\">DELETE</button></a> <a href=\"/thesis/edit/'+thesis.id+'\"><button id=\"edit\" class=\"btn btn-success\" type=\"submit\">EDIT</button></a><hr></li>')
 			});
 		});

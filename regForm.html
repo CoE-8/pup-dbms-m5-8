@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery-1.11.3.js"></script>
+</head>
+
+<nav class="navbar navbar-inverse navbar-static-top" style="height: 125px; margin: 0px;">
+    <div class="container">
+    <img src="/static/image/1.png" style="height:100px; margin-top: 18px" class="img-responsive center-block">
+    </div>
+</nav>
+
+<body>
+  
+<div class="header2">
+<div class="container">
+  <ul class="nav">
+      <li class="logout"><a href="{{logout_url}}"> <h4>LOG OUT</h4> </a></li>
+  </ul>
+</div>
+
+<div class="form">
+<p>REGISTRATION FORM</p>
+    <form id="create-form" url="/register" method="post">
+        <div class="inner-wrap">
+            <label>First Name <input type="text" name="first_name" required></label>
+            <label>Last Name <input type="text" name="last_name" required></label>
+            <label>Phone Number <input type="number" name="phone_number" required></label>
+        </div>
+        <input class="btn btn-warning" type="submit" value="REGISTER">
+    </form>
+</div>
+
+</body>
+
+</html>
