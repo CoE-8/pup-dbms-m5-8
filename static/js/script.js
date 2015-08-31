@@ -15,7 +15,7 @@ $(function(){
 
 			// read response from server
 			if (response.status = 'OK') {
-				var thesisDetail = '<strong>YEAR:</strong> ' + response.data.Year + '<br><strong>TITLE: </strong>' + response.data.Title + '<br><strong>CREATED BY: </strong>' + response.data.username;
+				var thesisDetail = '<strong>YEAR:</strong> ' + response.data.Year + '<br><strong>TITLE: </strong>' + response.data.Title + '<br><strong>CREATED BY: </strong>' + response.data.first_name + ' ' + response.data.last_name;
 				$('#student-list').prepend('<li>' + thesisDetail + '<br><a href=\"/thesis/delete/'+response.data.id+'\"><button id=\"delete\" class=\"btn btn-danger\" type=\"submit\">DELETE</button></a> <a href=\"/thesis/edit/'+response.data.id+'\"><button id=\"edit\" class=\"btn btn-success\" type=\"submit\">EDIT</button></a><hr></li>')
 				$('input[type=text], [type=number]').val('');
 				$('textarea[type=text]').val('');
@@ -35,7 +35,7 @@ $(function(){
 		$.get(thesis_list_api, {} , function(response) {
 			console.log('#student-list', response)
 			response.data.forEach(function(thesis){
-				var thesisDetail = '<strong>YEAR: </strong>' + thesis.Year + '<br><strong>TITLE: </strong>'  + thesis.Title + '<br><strong>CREATED BY: </strong>' + thesis.username;
+				var thesisDetail = '<strong>YEAR: </strong>' + thesis.Year + '<br><strong>TITLE: </strong>'  + thesis.Title + '<br><strong>CREATED BY: </strong>' + thesis.first_name + ' ' + thesis.last_name;
 				$('#student-list').append('<li>' + thesisDetail + '<br><a href=\"/thesis/delete/'+thesis.id+'\"><button id=\"delete\" class=\"btn btn-danger\" type=\"submit\">DELETE</button></a> <a href=\"/thesis/edit/'+thesis.id+'\"><button id=\"edit\" class=\"btn btn-success\" type=\"submit\">EDIT</button></a><hr></li>')
 			});
 		});

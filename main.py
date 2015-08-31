@@ -152,6 +152,8 @@ class APIThesisHandler(webapp2.RequestHandler):
         thesis_list = []
 
         for th in thesis:
+            author = th.userId
+            created_by = ndb.Key('User', author)
             thesis_list.append({
                     'id' : th.key.id(),
                     'Year' : th.Year,
@@ -159,7 +161,9 @@ class APIThesisHandler(webapp2.RequestHandler):
                     'Abstract' : th.Abstract,
                     'Adviser' : th.Adviser,
                     'Section' : th.Section,
-                    'username' : th.username
+                    'username' : th.username,
+                    'first_name' : created_by.get().first_name,
+                    'last_name' : created_by.get().last_name
                 })
         #return list to client
         response = {
@@ -180,7 +184,10 @@ class APIThesisHandler(webapp2.RequestHandler):
         th.username = user.nickname()
         th.userId = user.user_id()
         th.put()
-        
+
+        author = th.userId
+        created_by = ndb.Key('User', author)
+
         self.response.headers['Content-Type'] = 'application/json'
         response = {
             'result' : 'OK',
@@ -188,10 +195,9 @@ class APIThesisHandler(webapp2.RequestHandler):
                 'id' : th.key.id(),
                 'Year' : th.Year,
                 'Title' : th.Title,
-                'Abstract' : th.Abstract,
-                'Adviser' : th.Adviser,
-                'Section' : th.Section,
-                'username' : th.username
+                'username' : th.username,
+                'first_name' : created_by.get().first_name,
+                'last_name' : created_by.get().last_name,
             }
         }
         self.response.out.write(json.dumps(response))
